@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script>
+    function GetMap()
+    {
+          map = new Microsoft.Maps.Map(document.getElementById("mapDiv"),{credentials:"Ar6Ux3p1cKg6Bv47HRuNEfLoiPUAoTaenN570bHQwgOY1P7uDO1im9txMRSYMv9Z"});
+          Microsoft.Maps.loadModule('Microsoft.Maps.Directions', { callback: directionsModuleLoaded });
+    }
+    function directionsModuleLoaded() {
+        // Initialize the DirectionsManager
+        directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map);
+
+        // Set the id of the div to use to display the directions
+        directionsManager.setRenderOptions({ itineraryContainer: document.getElementById('itineraryDiv') });
+
+        // Specify a handler for when an error occurs
+        Microsoft.Maps.Events.addHandler(directionsManager, 'directionsError', displayError);
+
+        // Calculate directions, which displays a route on the map
+        directionsManager.calculateDirections();
+
+    }
+
+    </script>
+</head>
+<body>
+    <div id='itineraryDiv' style="position:relative; float:left; width:400px;"></div>
+    <div id='mapDiv' style="position:relative; width:800px; height:800px;"></div>
+    
+</body>
+</html>

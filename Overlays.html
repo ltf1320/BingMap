@@ -1,0 +1,29 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+
+    <script type="text/javascript">
+
+        var map = null;
+
+        Microsoft.Maps.loadModule('Microsoft.Maps.Overlays.Style', { callback: GetMap });
+
+        function GetMap() {
+
+            var options = { credentials: "Ar6Ux3p1cKg6Bv47HRuNEfLoiPUAoTaenN570bHQwgOY1P7uDO1im9txMRSYMv9Z", center: new Microsoft.Maps.Location(47.5, -122.3), zoom: 9, customizeOverlays: true }
+
+            map = new Microsoft.Maps.Map(document.getElementById("mapDiv"), options);
+
+
+        }
+
+    </script>
+</head>
+<body>
+    <div id='mapDiv' style="position:relative; width:600px; height:600px;"></div>
+</body>
+</html>
